@@ -222,12 +222,12 @@ def home_main_sale_data():
                 controls=[
                     ft.Text(
                         value=f"{main_sale.get("discount_from")} - {main_sale.get("discount_to")}",
-                        color=ft.Colors.WHITE,
+                        color=ft.Colors.BLACK,
                         size=10,
                     ),
                     ft.Text(
                         value=main_sale.get("name"),
-                        color=ft.Colors.WHITE,
+                        color=ft.Colors.BLACK,
                         size=15,
                     ),
                     products_list
