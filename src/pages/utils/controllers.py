@@ -65,7 +65,6 @@ def home_categories_data():
         for category in categories:
             categories_data.controls.append(
                 ft.Button(
-                    bgcolor=ft.Colors.GREY_200,
                     style=ft.ButtonStyle(
                         shape=ft.RoundedRectangleBorder(radius=20)
                     ),
@@ -74,20 +73,24 @@ def home_categories_data():
                         controls=[
                             ft.Image(
                                 src=category.get("image"),
-                                fit=ft.BoxFit.COVER
+                                fit=ft.BoxFit.SCALE_DOWN,
+                                width=150,
+                                height=80,
                             ),
                             ft.Text(
                                 max_lines=2,
                                 overflow=ft.TextOverflow.ELLIPSIS,
                                 value=category.get("name"),
                                 size=10,
-                                text_align=ft.TextAlign.CENTER
+                                text_align=ft.TextAlign.CENTER,
+                                color=ft.Colors.BLACK
                             )
                         ]
                     )
                 )
             )
         return ft.Container(
+            padding=10,
             content=categories_data,
             bgcolor=ft.Colors.WHITE,
             border_radius=15
