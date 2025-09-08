@@ -155,7 +155,7 @@ def home_main_sale_data():
             products_list.controls.append(
                 ft.Button(
                     width=130,
-                    height=400,
+                    height=350,
                     color=ft.Colors.WHITE,
                     style=ft.ButtonStyle(
                         shape=ft.RoundedRectangleBorder(radius=20)
@@ -230,7 +230,19 @@ def home_main_sale_data():
                         color=ft.Colors.BLACK,
                         size=15,
                     ),
-                    products_list
+                    products_list,
+                    ft.Button(
+                        width=400,
+                        height=60,
+                        bgcolor=ft.Colors.YELLOW,
+                        style=ft.ButtonStyle(
+                            shape=ft.RoundedRectangleBorder(radius=20)
+                        ),
+                        content=ft.Text(
+                            value="See All",
+                            color=ft.Colors.BLACK,
+                        )
+                    )
                 ]
             )
         )
