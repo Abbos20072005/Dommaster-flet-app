@@ -19,6 +19,7 @@ def on_navigation_bar(e):
     elif e.control.selected_index == 4:
         profile_page(e.page)
 
+
 def rating_row(value: float, reviews: int = None, size: int = 16, color: str = "#E31B23"):
     # Round to nearest 0.5
     v = round(value * 2) / 2
@@ -38,6 +39,7 @@ def rating_row(value: float, reviews: int = None, size: int = 16, color: str = "
         stars.append(ft.Text(f"({reviews})", size=size-2, color=ft.Colors.GREY_600))
 
     return ft.Row(controls=stars, spacing=1, vertical_alignment=ft.CrossAxisAlignment.CENTER)
+
 
 def quantity_number():
     txt_number = ft.Text(

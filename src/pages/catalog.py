@@ -1,5 +1,5 @@
 import flet as ft
-from .utils.controllers import catalog_categories_data
+from .controllers.catalog_controllers import catalog_categories_data
 
 def catalog_page(page):
     page.clean()

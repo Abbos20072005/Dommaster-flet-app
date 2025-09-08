@@ -1,7 +1,7 @@
 import flet as ft
-from pages.utils.controllers import home_categories_data
-from pages.utils.controllers import home_banner_data
-from pages.utils.controllers import home_main_sale_data
+from pages.controllers.home_controllers import home_categories_data
+from pages.controllers.home_controllers import home_banner_data
+from pages.controllers.home_controllers import home_main_sale_data
 from pages.utils.widgets import on_navigation_bar
 
 def home_page(page):
@@ -66,7 +66,7 @@ def home_page(page):
                                         ),
                                         ft.IconButton(
                                             icon=ft.Icons.PHONE,
-                                            on_click=page.launch_url("tel:+998901234567")
+                                            # on_click=page.launch_url("tel:+998901234567")
                                         )
                                     ]
                                 )
