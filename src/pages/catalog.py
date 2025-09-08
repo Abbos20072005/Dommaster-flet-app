@@ -16,6 +16,7 @@ def catalog_page(page):
     page.add(
         ft.SafeArea(
             content=ft.Container(
+                padding=10,
                 content=catalog_categories_data()
             )
         )
