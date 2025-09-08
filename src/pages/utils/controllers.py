@@ -86,22 +86,19 @@ def home_categories_data():
                     style=ft.ButtonStyle(
                         shape=ft.RoundedRectangleBorder(radius=20)
                     ),
-                    content=ft.Column(
-                        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                        alignment=ft.MainAxisAlignment.CENTER,
-                        spacing=1,
+                    content=ft.Stack(
+                        alignment=ft.Alignment.TOP_CENTER,
                         controls=[
+                            ft.Image(
+                                src=category.get("image"),
+                                fit=ft.BoxFit.COVER
+                            ),
                             ft.Text(
                                 max_lines=2,
                                 overflow=ft.TextOverflow.ELLIPSIS,
                                 value=category.get("name"),
                                 size=10,
-                                text_align=ft.TextAlign.CENTER,
-                            ),
-                            ft.Image(
-                                src=category.get("image"),
-                                width=60,
-                                height=60
+                                text_align=ft.TextAlign.CENTER
                             )
                         ]
                     )
@@ -186,7 +183,7 @@ def home_main_sale_data():
                                 alignment=ft.Alignment(3, -1.8),
                                 controls=[
                                     ft.Image(
-                                        # fit=ft.BoxFit.COVER,
+                                        fit=ft.BoxFit.COVER,
                                         src=product.get("images")[0].get("image"),
                                         width=80,
                                         height=80

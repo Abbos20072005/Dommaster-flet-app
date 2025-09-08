@@ -93,7 +93,6 @@ def home_page(page):
                 expand=True,
                 adaptive=True,
                 width=page.window.width,
-                scroll=ft.ScrollMode.ALWAYS,
                 controls=[
                     ft.Divider(height=120),
                     home_categories_data(),
