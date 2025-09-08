@@ -1,24 +1,7 @@
 import flet as ft
 import httpx
-
-def on_navigation_bar(e):
-    from pages.home import home_page
-    from pages.catalog import catalog_page
-    from pages.cart import cart_page
-    from pages.favourites import favourites_page
-    from pages.profile import profile_page
-
-    if e.control.selected_index == 0:
-        home_page(e.page)
-    elif e.control.selected_index == 1:
-        catalog_page(e.page)
-    elif e.control.selected_index == 2:
-        cart_page(e.page)
-    elif e.control.selected_index == 3:
-        favourites_page(e.page)
-    elif e.control.selected_index == 4:
-        profile_page(e.page)
-
+from pages.utils.widgets import rating_row
+from pages.utils.widgets import quantity_number
 
 def catalog_categories_data():
     urls = f"https://api.dommaster.uz/api/v1/categories/"
@@ -171,7 +154,7 @@ def home_main_sale_data():
         for product in products:
             products_list.controls.append(
                 ft.Button(
-                    width=120,
+                    width=130,
                     height=400,
                     color=ft.Colors.WHITE,
                     style=ft.ButtonStyle(
@@ -180,7 +163,7 @@ def home_main_sale_data():
                     content=ft.Column(
                         controls=[
                             ft.Stack(
-                                alignment=ft.Alignment(3, -1.8),
+                                alignment=ft.Alignment(3, -2),
                                 controls=[
                                     ft.Image(
                                         fit=ft.BoxFit.COVER,
@@ -189,7 +172,6 @@ def home_main_sale_data():
                                         height=80
                                     ),
                                     ft.IconButton(
-                                        # alignment=ft.Alignment.BOTTOM_RIGHT,
                                         icon=ft.Icons.FAVORITE_BORDER,
                                         style=ft.ButtonStyle(
                                             shape=ft.CircleBorder()
@@ -203,7 +185,23 @@ def home_main_sale_data():
                                 max_lines=3,
                                 overflow=ft.TextOverflow.ELLIPSIS,
                                 size=10,
-                            )
+                                color=ft.Colors.BLACK
+                            ),
+                            rating_row(
+                                value=product.get("rating"),
+                                reviews=product.get("rating"),
+                                size=10
+                            ),
+                            ft.Divider(
+                                height=10,
+                                color=ft.Colors.TRANSPARENT
+                            ),
+                            ft.Text(
+                                value=f"{product.get("price")} cym",
+                                size=12,
+                                color=ft.Colors.BLACK
+                            ),
+                            quantity_number()
                         ]
                     )
                     

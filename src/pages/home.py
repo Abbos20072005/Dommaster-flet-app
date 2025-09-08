@@ -1,8 +1,8 @@
 import flet as ft
-from pages.utils.controllers import on_navigation_bar
 from pages.utils.controllers import home_categories_data
 from pages.utils.controllers import home_banner_data
 from pages.utils.controllers import home_main_sale_data
+from pages.utils.widgets import on_navigation_bar
 
 def home_page(page):
     page.clean()
