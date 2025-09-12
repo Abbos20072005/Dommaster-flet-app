@@ -90,9 +90,8 @@ def home_page(page):
         ft.SafeArea(
             content=ft.ListView(
                 spacing=10,
-                expand=True,
                 adaptive=True,
-                width=page.window.width,
+                height=page.window.width,
                 controls=[
                     ft.Divider(height=120),
                     home_categories_data(),

@@ -46,6 +46,7 @@ def home_categories_data():
                     )
                 )
             )
+
         return ft.Container(
             padding=10,
             content=categories_data,
@@ -164,7 +165,6 @@ def home_main_sale_data():
                             quantity_number()
                         ]
                     )
-                    
                 )
             )
 
@@ -192,7 +192,7 @@ def home_main_sale_data():
                     ),
                     products_list,
                     ft.Button(
-                        width=400,
+                        width=430,
                         height=60,
                         bgcolor=ft.Colors.YELLOW,
                         style=ft.ButtonStyle(

@@ -54,7 +54,7 @@ def quantity_number():
     def plus_click(e):
         txt_number.value = str(int(txt_number.value) + 1)
 
-
+    #TODO: need to fix the buttons sizes and alignment
     return ft.Container(
         adaptive=True,
         border_radius=10,
@@ -71,14 +71,16 @@ def quantity_number():
                     icon=ft.Icons.REMOVE, 
                     icon_size=0,
                     padding=0,
-                    on_click=minus_click
+                    on_click=minus_click,
+                    icon_color=ft.Colors.BLACK
                 ),
                 txt_number,
                 ft.IconButton(
                     icon=ft.Icons.ADD,
                     icon_size=0,
                     padding=0,
-                    on_click=plus_click
+                    on_click=plus_click,
+                    icon_color=ft.Colors.BLACK
                 ),
             ],
         )
